@@ -1,0 +1,14 @@
+services:
+  db:
+    image: mariadb
+    restart: unless-stopped
+    ports:
+      - '3306:3306'
+    volumes:
+      - redesycomunicaciones:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+
+volumes:
+  redesycomunicaciones:
+    driver: local
